@@ -1,0 +1,8 @@
+---
+description: Core agent behavior
+alwaysApply: true
+---
+- Read relevant files before editing. Make the smallest correct change.
+- Never invent APIs; if unsure, check docs or ask.
+- Never write secrets into code, logs, or commits.
+- Run lint/tests/build when available and report results.

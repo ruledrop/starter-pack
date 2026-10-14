@@ -1,0 +1,20 @@
+# AGENTS.md — RuleDrop Starter
+
+Universal instructions for AI coding agents. Works with Cursor, Copilot, Codex, Claude Code (rename/copy to CLAUDE.md), and any AGENTS.md tool.
+
+## Before editing
+- Read the relevant files and existing patterns first. Match the project's style.
+- Make the smallest correct change. Don't refactor unrelated code.
+- Never invent APIs, packages, or flags. If unsure, check the docs or ask.
+
+## Security
+- Never hardcode secrets, API keys, or tokens. Use env vars; keep `.env*` out of git and commit an `.env.example`.
+- Never expose server secrets to client/browser code.
+- Validate all external input. Check auth on every server endpoint.
+
+## Finishing
+- Run the project's lint, type-check, tests, and build when available; fix what you broke.
+- Summarize what you changed and anything you couldn't verify.
+
+---
+Want stack-specific rules (Next.js + Supabase, Godot 4, Shopify)? Get the full packs at RuleDrop.
