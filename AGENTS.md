@@ -17,4 +17,4 @@ Universal instructions for AI coding agents. Works with Cursor, Copilot, Codex, 
 - Summarize what you changed and anything you couldn't verify.
 
 ---
-Want stack-specific rules (Next.js + Supabase, Godot 4, Shopify)? Get the full packs at RuleDrop.
+Want stack-specific rules (Next.js + Supabase, Godot 4, Shopify)? Get the full packs at https://ruledrop.github.io

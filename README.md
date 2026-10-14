@@ -30,7 +30,7 @@ Then tweak the bullets to your project. Short, specific rules work best.
 - Run lint, types, tests and build before calling it done
 
 ## Want stack-specific rules?
-Full packs for **Next.js + Supabase**, **Godot 4**, and **Shopify (Liquid + apps)** in Cursor, AGENTS.md, CLAUDE.md and Copilot formats: **coming soon** → [RuleDrop packs](#) <!-- TODO: replace with store link -->
+Full packs for **Next.js + Supabase**, **Godot 4**, and **Shopify (Liquid + apps)** in Cursor, AGENTS.md, CLAUDE.md and Copilot formats: **launching soon** → [ruledrop.github.io](https://ruledrop.github.io)
 
 ## Contributing
 Issues and PRs welcome, especially rules that fixed a real agent mistake for you.
