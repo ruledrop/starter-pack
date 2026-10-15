@@ -10,6 +10,7 @@ Universal instructions for AI coding agents. Works with Cursor, Copilot, Codex, 
 ## Security
 - Never hardcode secrets, API keys, or tokens. Use env vars; keep `.env*` out of git and commit an `.env.example`.
 - Never expose server secrets to client/browser code.
+- Never write secrets or credentials into AGENTS.md, CLAUDE.md, or any rules file.
 - Validate all external input. Check auth on every server endpoint.
 
 ## Finishing

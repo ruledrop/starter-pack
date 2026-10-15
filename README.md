@@ -29,6 +29,14 @@ Then tweak the bullets to your project. Short, specific rules work best.
 - Validate input and check auth on every server endpoint
 - Run lint, types, tests and build before calling it done
 
+## Keep your rules lean
+Agents start ignoring instructions once a rules file gets long. A few habits that keep these files working:
+- Keep `AGENTS.md` / `CLAUDE.md` short (aim for well under ~200 lines): always/never rules plus the commands to build, test and lint.
+- Only write down what the agent can't learn from the code or official docs. Link to docs instead of pasting them.
+- Put path-specific rules in scoped files (Cursor `globs`, Claude Code `.claude/rules/`) and multi-step workflows in skills, not the root file.
+- Never put secrets, API keys or tokens in any rules file. They get committed and sent to the model.
+- When the agent makes the same mistake twice, add one line. Every month or so, delete rules it already follows.
+
 ## Want stack-specific rules?
 Full packs for **Next.js + Supabase**, **Godot 4**, and **Shopify (Liquid + apps)** in Cursor, AGENTS.md, CLAUDE.md and Copilot formats: **launching soon** → [ruledrop.github.io](https://ruledrop.github.io)
 
