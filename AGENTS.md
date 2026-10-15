@@ -1,4 +1,4 @@
-# AGENTS.md — RuleDrop Starter
+# AGENTS.md — ShipSafe Starter
 
 Universal instructions for AI coding agents. Works with Cursor, Copilot, Codex, Claude Code (rename/copy to CLAUDE.md), and any AGENTS.md tool.
 
@@ -18,4 +18,4 @@ Universal instructions for AI coding agents. Works with Cursor, Copilot, Codex, 
 - Summarize what you changed and anything you couldn't verify.
 
 ---
-Want stack-specific rules (Next.js + Supabase, Godot 4, Shopify)? Get the full packs at https://ruledrop.github.io
+Want stack-specific rules (Next.js + Supabase, Godot 4, Shopify)? Get the full packs at https://ruledrop.github.io (ShipSafe).

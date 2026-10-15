@@ -1,8 +1,10 @@
-# RuleDrop Starter Pack
+# ShipSafe Starter Pack
 
-**Drop-in rules that make your AI coding agent ship like a senior dev.** Free, MIT-licensed.
+**Drop-in rules that keep vibe-coded apps ship-safe.** Free, MIT-licensed.
 
 A tiny, battle-tested set of instructions that stops the most common AI-agent mistakes: invented APIs, hardcoded secrets, sprawling diffs, and "done" without running checks.
+
+> Formerly **RuleDrop**. Same packs, new name. Site: [ruledrop.github.io](https://ruledrop.github.io) · GitHub org still [`github.com/ruledrop`](https://github.com/ruledrop) for now.
 
 ## What's inside
 
@@ -14,8 +16,8 @@ A tiny, battle-tested set of instructions that stops the most common AI-agent mi
 ## Install (30 seconds)
 
 ```bash
-git clone https://github.com/ruledrop/starter-pack /tmp/ruledrop
-cp -r /tmp/ruledrop/.cursor /tmp/ruledrop/AGENTS.md your-project/
+git clone https://github.com/ruledrop/starter-pack /tmp/shipsafe
+cp -r /tmp/shipsafe/.cursor /tmp/shipsafe/AGENTS.md your-project/
 ```
 
 - **Claude Code:** `cp AGENTS.md CLAUDE.md`
@@ -26,19 +28,15 @@ Then tweak the bullets to your project. Short, specific rules work best.
 ## What the rules enforce
 - Read first, make the smallest correct change, never invent APIs
 - No hardcoded secrets; env vars only; `.env*` stays out of git
+- Never put secrets in AGENTS.md / CLAUDE.md / rules files
 - Validate input and check auth on every server endpoint
 - Run lint, types, tests and build before calling it done
 
 ## Keep your rules lean
-Agents start ignoring instructions once a rules file gets long. A few habits that keep these files working:
-- Keep `AGENTS.md` / `CLAUDE.md` short (aim for well under ~200 lines): always/never rules plus the commands to build, test and lint.
-- Only write down what the agent can't learn from the code or official docs. Link to docs instead of pasting them.
-- Put path-specific rules in scoped files (Cursor `globs`, Claude Code `.claude/rules/`) and multi-step workflows in skills, not the root file.
-- Never put secrets, API keys or tokens in any rules file. They get committed and sent to the model.
-- When the agent makes the same mistake twice, add one line. Every month or so, delete rules it already follows.
+Agents follow short, specific rules best. Aim for roughly **under ~200 lines** of always-on instructions; move stack details into scoped rules (Cursor `globs` / Copilot `applyTo`) or skills. Prune monthly — delete rules the agent no longer needs. Never paste API keys, tokens, or private URLs into rules files.
 
 ## Want stack-specific rules?
-Full packs for **Next.js + Supabase**, **Godot 4**, and **Shopify (Liquid + apps)** in Cursor, AGENTS.md, CLAUDE.md and Copilot formats: **launching soon** → [ruledrop.github.io](https://ruledrop.github.io)
+Full packs for **Next.js + Supabase**, **Godot 4**, and **Shopify (Liquid + apps)** in Cursor, AGENTS.md, CLAUDE.md and Copilot formats: **launching soon** → [ShipSafe on ruledrop.github.io](https://ruledrop.github.io)
 
 ## Contributing
 Issues and PRs welcome, especially rules that fixed a real agent mistake for you.
