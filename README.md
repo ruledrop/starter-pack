@@ -1,4 +1,4 @@
-# ShipSafe Starter Pack
+# ShipSafe Packs: Starter Pack
 
 **Drop-in rules that keep vibe-coded apps ship-safe.** Free, MIT-licensed.
 
@@ -36,7 +36,7 @@ Then tweak the bullets to your project. Short, specific rules work best.
 Agents follow short, specific rules best. Aim for roughly **under ~200 lines** of always-on instructions; move stack details into scoped rules (Cursor `globs` / Copilot `applyTo`) or skills. Prune monthly — delete rules the agent no longer needs. Never paste API keys, tokens, or private URLs into rules files.
 
 ## Want stack-specific rules?
-Full packs for **Next.js + Supabase**, **Godot 4**, and **Shopify (Liquid + apps)** in Cursor, AGENTS.md, CLAUDE.md and Copilot formats: **launching soon** → [ShipSafe on ruledrop.github.io](https://ruledrop.github.io)
+Full packs for **Next.js + Supabase**, **Godot 4**, and **Shopify (Liquid + apps)** in Cursor, AGENTS.md, CLAUDE.md and Copilot formats: **launching soon** → [ShipSafe Packs on ruledrop.github.io](https://ruledrop.github.io)
 
 ## Contributing
 Issues and PRs welcome, especially rules that fixed a real agent mistake for you.
