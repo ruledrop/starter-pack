@@ -12,15 +12,17 @@ A tiny, battle-tested set of instructions that stops the most common AI-agent mi
 |---|---|
 | `.cursor/rules/core.mdc` | Cursor (`alwaysApply: true`, so it's included in every Agent chat) |
 | `AGENTS.md` | Cursor, GitHub Copilot cloud agent, OpenAI Codex, Jules, Amp and any [AGENTS.md](https://agents.md)-compatible tool |
+| `CLAUDE.md` | Claude Code (one line, `@./AGENTS.md`, imports AGENTS.md so rules live in one place) |
+| `GEMINI.md` | Gemini CLI (same one-line import; Gemini doesn't read AGENTS.md by default) |
 
 ## Install (30 seconds)
 
 ```bash
 git clone https://github.com/ruledrop/starter-pack /tmp/shipsafe
-cp -r /tmp/shipsafe/.cursor /tmp/shipsafe/AGENTS.md your-project/
+cp -r /tmp/shipsafe/.cursor /tmp/shipsafe/AGENTS.md /tmp/shipsafe/CLAUDE.md /tmp/shipsafe/GEMINI.md your-project/
 ```
 
-- **Claude Code:** `cp AGENTS.md CLAUDE.md`
+- **Claude Code / Gemini CLI:** nothing extra. `CLAUDE.md` and `GEMINI.md` just import `AGENTS.md`, so edit only AGENTS.md.
 - **GitHub Copilot (chat):** `mkdir -p .github && cp AGENTS.md .github/copilot-instructions.md`
 
 Then tweak the bullets to your project. Short, specific rules work best.
