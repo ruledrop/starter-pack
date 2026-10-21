@@ -1,6 +1,6 @@
 # AGENTS.md — ShipSafe Starter
 
-Universal instructions for AI coding agents. Works with Cursor, Copilot, Codex, Claude Code (rename/copy to CLAUDE.md), and any AGENTS.md tool.
+Universal instructions for AI coding agents. Works with Cursor, Copilot, Codex, Claude Code (via the one-line CLAUDE.md import), and any AGENTS.md tool.
 
 ## Before editing
 - Read the relevant files and existing patterns first. Match the project's style.

@@ -14,12 +14,14 @@ A tiny, battle-tested set of instructions that stops the most common AI-agent mi
 | `AGENTS.md` | Cursor, GitHub Copilot cloud agent, OpenAI Codex, Jules, Amp and any [AGENTS.md](https://agents.md)-compatible tool |
 | `CLAUDE.md` | Claude Code (one line, `@./AGENTS.md`, imports AGENTS.md so rules live in one place) |
 | `GEMINI.md` | Gemini CLI (same one-line import; Gemini doesn't read AGENTS.md by default) |
+| `.claude/settings.json` | Claude Code: hard-blocks reading `.env*` and `secrets/` (a rule can be ignored; a deny can't) |
+| `examples/claude-stop-hook/` | Opt-in Claude Code Stop hook that won't let the agent finish while tests fail |
 
 ## Install (30 seconds)
 
 ```bash
 git clone https://github.com/ruledrop/starter-pack /tmp/shipsafe
-cp -r /tmp/shipsafe/.cursor /tmp/shipsafe/AGENTS.md /tmp/shipsafe/CLAUDE.md /tmp/shipsafe/GEMINI.md your-project/
+cp -r /tmp/shipsafe/.cursor /tmp/shipsafe/.claude /tmp/shipsafe/AGENTS.md /tmp/shipsafe/CLAUDE.md /tmp/shipsafe/GEMINI.md your-project/
 ```
 
 - **Claude Code / Gemini CLI:** nothing extra. `CLAUDE.md` and `GEMINI.md` just import `AGENTS.md`, so edit only AGENTS.md.
@@ -33,6 +35,9 @@ Then tweak the bullets to your project. Short, specific rules work best.
 - Never put secrets in AGENTS.md / CLAUDE.md / rules files
 - Validate input and check auth on every server endpoint
 - Run lint, types, tests and build before calling it done
+
+## Rules ask, hooks enforce
+Rules files are guidance, and agents sometimes skip them. For the things that must never happen, the pack also ships a Claude Code deny list for `.env*` files, plus an opt-in Stop hook that runs your tests before the agent can say it's done. If you already have a `.claude/settings.json`, merge the `permissions.deny` entries instead of overwriting it.
 
 ## Keep your rules lean
 Agents follow short, specific rules best. Aim for roughly **under ~200 lines** of always-on instructions; move stack details into scoped rules (Cursor `globs` / Copilot `applyTo`) or skills. Prune monthly — delete rules the agent no longer needs. Never paste API keys, tokens, or private URLs into rules files.
