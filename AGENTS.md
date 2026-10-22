@@ -15,6 +15,7 @@ Universal instructions for AI coding agents. Works with Cursor, Copilot, Codex, 
 
 ## Finishing
 - Run the project's lint, type-check, tests, and build when available; fix what you broke.
+- Never edit, skip, or delete tests just to make them pass. Fix the code, or explain why the test is wrong and ask.
 - Summarize what you changed and anything you couldn't verify.
 
 ---

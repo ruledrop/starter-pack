@@ -39,6 +39,8 @@ Then tweak the bullets to your project. Short, specific rules work best.
 ## Rules ask, hooks enforce
 Rules files are guidance, and agents sometimes skip them. For the things that must never happen, the pack also ships a Claude Code deny list for `.env*` files, plus an opt-in Stop hook that runs your tests before the agent can say it's done. If you already have a `.claude/settings.json`, merge the `permissions.deny` entries instead of overwriting it.
 
+To keep rules from drifting, `examples/ci/rules-check.yml` is a GitHub Actions check that fails if `CLAUDE.md`/`GEMINI.md` stop importing `AGENTS.md` or if a rules file looks like it contains a secret. Copy it to `.github/workflows/`.
+
 ## Keep your rules lean
 Agents follow short, specific rules best. Aim for roughly **under ~200 lines** of always-on instructions; move stack details into scoped rules (Cursor `globs` / Copilot `applyTo`) or skills. Prune monthly — delete rules the agent no longer needs. Never paste API keys, tokens, or private URLs into rules files.
 

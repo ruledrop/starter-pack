@@ -1,0 +1,24 @@
+# ShipSafe rules check: copy to .github/workflows/rules-check.yml
+name: rules-check
+on: [pull_request, push]
+jobs:
+  rules:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: AGENTS.md exists
+        run: test -f AGENTS.md
+      - name: CLAUDE.md and GEMINI.md import AGENTS.md
+        run: |
+          for f in CLAUDE.md GEMINI.md; do
+            if [ -f "$f" ] && ! grep -q '@./AGENTS.md' "$f"; then
+              echo "::error file=$f::$f should import @./AGENTS.md so every agent reads the same rules"; exit 1
+            fi
+          done
+      - name: No secrets in rules files
+        run: |
+          files=$(ls AGENTS.md CLAUDE.md GEMINI.md .cursor/rules/* .github/copilot-instructions.md 2>/dev/null || true)
+          [ -z "$files" ] && exit 0
+          if grep -nE '(sk-[A-Za-z0-9]{20,}|AKIA[0-9A-Z]{16}|ghp_[A-Za-z0-9]{36}|-----BEGIN [A-Z ]*PRIVATE KEY-----|eyJ[A-Za-z0-9_-]{20,}\.[A-Za-z0-9_-]{20,})' $files; then
+            echo "::error::Possible secret in a rules file. Move it to an env var."; exit 1
+          fi
