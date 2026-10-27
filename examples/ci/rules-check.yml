@@ -37,3 +37,17 @@ jobs:
             done
           done
           exit $bad
+      - name: Root rules files stay short
+        run: |
+          # Long root rules files get skimmed and ignored. Warn past 150 lines, fail past 300 (tune to taste).
+          bad=0
+          for f in AGENTS.md CLAUDE.md GEMINI.md; do
+            [ -f "$f" ] || continue
+            n=$(wc -l < "$f")
+            if [ "$n" -gt 300 ]; then
+              echo "::error file=$f::$f is $n lines. Move detail into linked docs or skills and keep the root file under 150."; bad=1
+            elif [ "$n" -gt 150 ]; then
+              echo "::warning file=$f::$f is $n lines. Agents follow short root files more reliably; aim for under 150."
+            fi
+          done
+          exit $bad
