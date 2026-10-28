@@ -1,0 +1,12 @@
+# Agent instruction files steer every AI coding agent that touches this repo.
+# Require a human owner's review before any change to them lands.
+# Copy to .github/CODEOWNERS, replace @your-handle, and turn on
+# "Require review from Code Owners" in your branch protection rules.
+
+/AGENTS.md            @your-handle
+/CLAUDE.md            @your-handle
+/GEMINI.md            @your-handle
+/.cursor/rules/       @your-handle
+/.claude/             @your-handle
+/.github/copilot-instructions.md @your-handle
+/.github/workflows/   @your-handle

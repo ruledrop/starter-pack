@@ -15,6 +15,7 @@ A tiny, battle-tested set of instructions that stops the most common AI-agent mi
 | `CLAUDE.md` | Claude Code (one line, `@./AGENTS.md`, imports AGENTS.md so rules live in one place) |
 | `GEMINI.md` | Gemini CLI (same one-line import; Gemini doesn't read AGENTS.md by default) |
 | `.claude/settings.json` | Claude Code: hard-blocks reading `.env*` and `secrets/` (a rule can be ignored; a deny can't) |
+| `examples/codeowners/` | CODEOWNERS that requires your review before anyone (or any agent PR) edits AGENTS.md, CLAUDE.md, Cursor/Claude config, or workflows |
 | `examples/claude-stop-hook/` | Opt-in Claude Code Stop hook that won't let the agent finish while tests fail |
 
 ## Install (30 seconds)
