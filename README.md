@@ -43,7 +43,7 @@ Rules files are guidance, and agents sometimes skip them. For the things that mu
 To keep rules from drifting, `examples/ci/rules-check.yml` is a GitHub Actions check that fails if `CLAUDE.md`/`GEMINI.md` stop importing `AGENTS.md`, if a rules file looks like it contains a secret, or if a rule mentions a `backticked/path` that no longer exists (stale rules make agents do the wrong thing). It also warns when a root rules file passes 150 lines and fails past 300, since agents follow short root files more reliably. Copy it to `.github/workflows/`.
 
 ## Keep your rules lean
-Agents follow short, specific rules best. Aim for roughly **under ~200 lines** of always-on instructions; move stack details into scoped rules (Cursor `globs` / Copilot `applyTo`) or skills. Prune monthly — delete rules the agent no longer needs. Never paste API keys, tokens, or private URLs into rules files.
+Agents follow short, specific rules best. Aim for roughly **under ~200 lines** of always-on instructions; move stack details into scoped rules (Cursor `globs` / Copilot `applyTo`) or skills. Prune monthly — delete rules the agent no longer needs. Re-audit after every model upgrade too: newer models often do the right thing unprompted, so delete rules that only patched an older model's habits, and keep the ones that encode your project's facts (commands, paths, conventions) and hard safety limits. Never paste API keys, tokens, or private URLs into rules files.
 
 ## Want stack-specific rules?
 Full packs for **Next.js + Supabase**, **Godot 4**, and **Shopify (Liquid + apps)** in Cursor, AGENTS.md, CLAUDE.md and Copilot formats: **launching soon** → [ShipSafe Packs on ruledrop.github.io](https://ruledrop.github.io)
