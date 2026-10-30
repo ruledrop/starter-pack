@@ -10,3 +10,10 @@
 /.claude/             @your-handle
 /.github/copilot-instructions.md @your-handle
 /.github/workflows/   @your-handle
+
+# IDE hook and MCP config files can run commands or connect tools as soon as
+# a repo is opened or an agent starts. Treat them like workflows.
+/.cursor/mcp.json     @your-handle
+/.mcp.json            @your-handle
+/.vscode/tasks.json   @your-handle
+/.vscode/settings.json @your-handle
