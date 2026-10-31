@@ -11,7 +11,7 @@ A tiny, battle-tested set of instructions that stops the most common AI-agent mi
 | File | Used by |
 |---|---|
 | `.cursor/rules/core.mdc` | Cursor (`alwaysApply: true`, so it's included in every Agent chat) |
-| `AGENTS.md` | Cursor, GitHub Copilot cloud agent, OpenAI Codex, Jules, Amp and any [AGENTS.md](https://agents.md)-compatible tool |
+| `AGENTS.md` | Cursor, GitHub Copilot cloud agent, OpenAI Codex, OpenCode, Jules, Amp and any [AGENTS.md](https://agents.md)-compatible tool |
 | `CLAUDE.md` | Claude Code (one line, `@./AGENTS.md`, imports AGENTS.md so rules live in one place) |
 | `GEMINI.md` | Gemini CLI (same one-line import; Gemini doesn't read AGENTS.md by default) |
 | `.claude/settings.json` | Claude Code: hard-blocks reading `.env*` and `secrets/` (a rule can be ignored; a deny can't) |
@@ -25,7 +25,7 @@ git clone https://github.com/ruledrop/starter-pack /tmp/shipsafe
 cp -r /tmp/shipsafe/.cursor /tmp/shipsafe/.claude /tmp/shipsafe/AGENTS.md /tmp/shipsafe/CLAUDE.md /tmp/shipsafe/GEMINI.md your-project/
 ```
 
-- **Claude Code / Gemini CLI:** nothing extra. `CLAUDE.md` and `GEMINI.md` just import `AGENTS.md`, so edit only AGENTS.md.
+- **Claude Code / Gemini CLI:** nothing extra. `CLAUDE.md` and `GEMINI.md` just import `AGENTS.md`, so edit only AGENTS.md. Keep real rules out of CLAUDE.md: tools like OpenCode read AGENTS.md first and skip CLAUDE.md when both exist.
 - **GitHub Copilot (chat):** `mkdir -p .github && cp AGENTS.md .github/copilot-instructions.md`
 
 Then tweak the bullets to your project. Short, specific rules work best.
