@@ -7,6 +7,7 @@ Universal instructions for AI coding agents. Works with Cursor, Copilot, Codex, 
 - Make the smallest correct change. Don't refactor unrelated code.
 - When reviewing or fixing, stay inside the diff. List pre-existing problems you notice; don't fix them unless I ask.
 - Never invent APIs, packages, or flags. If unsure, check the docs or ask.
+- If these rules contradict the actual code (a path, script, or pattern that no longer exists), stop and tell me instead of silently following either one.
 
 ## Security
 - Never hardcode secrets, API keys, or tokens. Use env vars; keep `.env*` out of git and commit an `.env.example`.
