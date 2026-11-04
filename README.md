@@ -25,7 +25,7 @@ git clone https://github.com/ruledrop/starter-pack /tmp/shipsafe
 cp -r /tmp/shipsafe/.cursor /tmp/shipsafe/.claude /tmp/shipsafe/AGENTS.md /tmp/shipsafe/CLAUDE.md /tmp/shipsafe/GEMINI.md your-project/
 ```
 
-- **Claude Code / Gemini CLI:** nothing extra. `CLAUDE.md` and `GEMINI.md` just import `AGENTS.md`, so edit only AGENTS.md. Keep real rules out of CLAUDE.md: tools like OpenCode read AGENTS.md first and skip CLAUDE.md when both exist.
+- **Claude Code / Gemini CLI:** nothing extra. `CLAUDE.md` and `GEMINI.md` just import `AGENTS.md`, so edit only AGENTS.md. Keep real rules out of CLAUDE.md: tools like OpenCode read AGENTS.md first and skip CLAUDE.md when both exist. Already have a `CLAUDE.md` (or `CLAUDE.local.md`)? Don't skip it: Claude Code reads those instead of AGENTS.md, so add the line `@./AGENTS.md` to the top of your existing file or the rules never load.
 - **GitHub Copilot (chat):** `mkdir -p .github && cp AGENTS.md .github/copilot-instructions.md`
 
 Then tweak the bullets to your project. Short, specific rules work best.
