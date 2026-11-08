@@ -15,6 +15,18 @@ jobs:
               echo "::error file=$f::$f should import @./AGENTS.md so every agent reads the same rules"; exit 1
             fi
           done
+      - name: CLAUDE.md and GEMINI.md stay thin imports
+        run: |
+          # Shared rules belong in AGENTS.md. These files should stay a short import
+          # plus optional tool-only notes — fail if they grow into a second rulebook.
+          for f in CLAUDE.md GEMINI.md; do
+            [ -f "$f" ] || continue
+            n=$(wc -l < "$f")
+            if [ "$n" -gt 12 ]; then
+              echo "::error file=$f::$f is $n lines. Keep it a short @./AGENTS.md import (plus optional tool-only notes) and put shared rules in AGENTS.md."
+              exit 1
+            fi
+          done
       - name: No secrets in rules files
         run: |
           files=$(ls AGENTS.md CLAUDE.md GEMINI.md .cursor/rules/* .github/copilot-instructions.md 2>/dev/null || true)
